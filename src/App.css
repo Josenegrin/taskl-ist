@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+.container{
+  display: grid;
+  place-items: center;
+  background-color:#DDDDDD;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container_form_list{
+  background-color: white;
+  color: black;
+  padding: 20px;
+  background-color: #C7C7C7
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container_form {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.form {
+  background-color: #F8F8F8;
+  padding: 10px;
+}
+
+.input{
+  border: none;
+  background-color: inherit;
+  outline: none;; 
+  /* ;;  */
+}
+
+.button_submit{
+  background-color: lightcoral;
+  border: 1px solid transparent;
+  padding: 5px;
   color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+}
+.button_submit:disabled,
+.button_submit[disabled] {
+  opacity: 0.5;
+}
+.list{
+  background-color: white;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  list-style: none;
+  display:flex;
+  flex-flow: column;
+}
+.itemList{
+  padding: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F8F8F8;
+  position:relative;
+}
+.itemList_label{
+  padding-left: 25px;
+  color: #7BA09F;
+  font-weight: bold;
+}
+.itemList_label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.itemList_label .checkbox-custom{
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #61D3DF;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.itemList_label .checkbox-custom::after{
+  position: absolute;
+  content: "";
+  left: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border-radius: 5px;
+  border: solid #61D3DF;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity: 1px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+.itemList_label input:checked ~ .checkbox-custom {
+  background-color: transparent;
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.itemList_label input:checked ~ .checkbox-custom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  left: 5px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid #61D3DF;
+  border-width: 0 3px 3px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+.itemList_label_checked{
+  -webkit-text-decoration-line: line-through;
+  text-decoration-line: line-through;
+  text-decoration-color: #61D3DF;
+  text-decoration-thickness: 3px
+  
+}
+.buton_delete_completed {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px 0px;
+  background-color: #48ADC0;
+  color: white;
+  display: inline-flex;
+  width: 70%;
+  margin: auto;
+  justify-content: center;
+  margin-top: 10px;
+  cursor: pointer;
 }
